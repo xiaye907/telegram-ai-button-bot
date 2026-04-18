@@ -327,11 +327,11 @@ function updateCmdBox() {
 loadLocal();
 updateCmdBox();
 
-// 预填 Worker URL
-if (!document.getElementById('worker_url').value) {
-  document.getElementById('worker_url').value = 'https://tg-button-bot.xiaye100108.workers.dev';
-  saveLocal();
-}
+// 预填 Worker URL (可选)
+// if (!document.getElementById('worker_url').value) {
+//   document.getElementById('worker_url').value = 'https://tg-button-bot.your-account.workers.dev';
+//   saveLocal();
+// }
 </script>
 </body>
 </html>
