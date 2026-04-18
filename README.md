@@ -28,7 +28,7 @@
 - Telegram Bot Token（从 [@BotFather](https://t.me/BotFather) 获取）
 - 豆包 API Key
 
-### 一键部署（推荐）
+### 方式一：自动化安装（推荐）
 
 ```bash
 # 1. 克隆项目
@@ -38,11 +38,24 @@ cd tg-button-bot
 # 2. 安装依赖
 npm install
 
-# 3. 运行初始化向导（自动完成所有配置）
-npm run setup
+# 3. 运行初始化脚本（自动完成所有配置）
+node scripts/setup.js
 ```
 
-向导会引导你完成：登录 Cloudflare → 创建 KV/D1 → 配置密钥 → 部署 → 注册 Webhook
+脚本会自动完成：
+- 登录 Cloudflare
+- 创建 D1 数据库
+- 初始化数据库表结构
+- 配置环境变量（BOT_TOKEN、DOUBAO_API_KEY、ADMIN_IDS 等）
+- 部署到 Cloudflare Workers
+- 设置 Webhook
+
+### 方式二：可视化配置页面
+
+部署后访问 `https://你的worker.workers.dev/setup` 使用图形界面完成配置：
+- 输入 Bot Token 和 Worker URL
+- 一键设置 Webhook
+- 测试 Bot 连接
 
 ### 手动部署
 
