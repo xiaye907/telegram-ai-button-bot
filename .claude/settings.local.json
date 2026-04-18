@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx wrangler *)",
+      "Bash(npm run *)",
+      "WebSearch",
+      "WebFetch(domain:core.telegram.org)",
+      "Bash(gh *)",
+      "Bash(winget install *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)"
+    ]
+  }
+}

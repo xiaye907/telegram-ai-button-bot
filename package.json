@@ -1,0 +1,18 @@
+{
+  "name": "tg-button-bot",
+  "version": "1.0.0",
+  "description": "Telegram 智能按钮生成机器人 — Cloudflare Workers",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "setup": "node scripts/setup.js",
+    "db:migrate": "wrangler d1 execute tg-button-bot --file=./scripts/schema.sql",
+    "db:migrate:local": "wrangler d1 execute tg-button-bot --local --file=./scripts/schema.sql",
+    "logs": "wrangler tail",
+    "secret:set": "node scripts/set-secrets.js"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

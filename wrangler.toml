@@ -1,0 +1,32 @@
+name = "tg-button-bot"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+BOT_LANGUAGE = "zh"
+MAX_FREE_CALLS = "50"
+MAX_PRO_CALLS = "500"
+
+# KV 命名空间 (执行 wrangler kv:namespace create "BOT_KV" 后填入 id)
+[[kv_namespaces]]
+binding = "BOT_KV"
+id = "22fa8411afed4ef891c6d176a5490dc9"
+
+# D1 数据库 (执行 wrangler d1 create tg-button-bot 后填入 database_id)
+[[d1_databases]]
+binding = "DB"
+database_name = "tg-button-bot"
+database_id = "83c7fdac-6ac7-4425-8854-b78a3a92de00"
+
+[triggers]
+crons = ["0 0 * * *"]  # 每日零点执行定时任务(重置额度等)
+
+# 密钥通过 wrangler secret put 命令设置，不写在此处:
+# BOT_TOKEN         - Telegram Bot Token
+# WEBHOOK_SECRET    - Webhook 验证密钥
+# DEEPSEEK_API_KEY  - DeepSeek API Key
+# DOUBAO_API_KEY    - 豆包 API Key
+# ADMIN_IDS         - 管理员 Telegram ID (逗号分隔)
+# ENCRYPTION_KEY    - 数据加密密钥
